@@ -1,0 +1,23 @@
+@use "src/base" as *;
+
+.register-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
+    .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 450px;
+
+        .heading {
+            font-size: 32px;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+}

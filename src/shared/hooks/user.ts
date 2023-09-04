@@ -1,5 +1,6 @@
-import { useMutation, useQuery } from "@tanstack/react-query"
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { getUser, login, register } from "services/user"
+import { setToken } from "utils/token"
 
 export const useUser = () => {
     const { data, isFetching } = useQuery(["user"], getUser)
@@ -7,11 +8,25 @@ export const useUser = () => {
 }
 
 export const useLogin = () => {
-    const { mutateAsync, isLoading } = useMutation(login)
+    const client = useQueryClient()
+
+    const onSuccess = (token: string) => {
+        setToken(token)
+        client.invalidateQueries(['user'])
+    }
+
+    const { mutateAsync, isLoading } = useMutation(login, { onSuccess })
     return { login: mutateAsync, isLoggingIn: isLoading }
 }
 
 export const useRegister = () => {
-    const { mutateAsync, isLoading } = useMutation(register)
+    const client = useQueryClient()
+
+    const onSuccess = (token: string) => {
+        setToken(token)
+        client.invalidateQueries(['user'])
+    }
+
+    const { mutateAsync, isLoading } = useMutation(register, { onSuccess })
     return { register: mutateAsync, isRegistering: isLoading }
 }

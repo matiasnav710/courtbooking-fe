@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query"
 import { BrowserRouter } from "react-router-dom"
 import { ChakraProvider } from "@chakra-ui/react"
+import { Toaster } from 'react-hot-toast'
 import axios from "axios"
 import App from './App.tsx'
 
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <QueryClientProvider client={client}>
         <ChakraProvider>
           <App />
+          <Toaster />
         </ChakraProvider>
       </QueryClientProvider>
     </BrowserRouter>
