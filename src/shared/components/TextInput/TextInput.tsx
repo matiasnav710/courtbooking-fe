@@ -9,7 +9,7 @@ const TextInput: React.FC<ITextInputProps> = ({ fieldName, ...inputProps }) => {
         <FormControl isInvalid={!!(errors[fieldName] && touched[fieldName])}>
             <Input {...inputProps} onChange={handleChange(fieldName)} onBlur={() => setFieldTouched(fieldName)} />
             <FormErrorMessage>
-                {errors[fieldName]}
+                {touched[fieldName] && errors[fieldName]}
             </FormErrorMessage>
         </FormControl>
     )
