@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast'
 import axios from "axios"
 import App from './App.tsx'
 
+import "react-datepicker/dist/react-datepicker.css";
 import './index.scss'
 
 axios.defaults.baseURL = import.meta.env.VITE_BACKEND

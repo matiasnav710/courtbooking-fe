@@ -8,7 +8,7 @@ const CourtSelect = () => {
     const { courts, isGettingCourts } = useCourts(+values.venue)
 
     return (
-        <FormSelect isDisabled={isGettingCourts} fieldName="venue">
+        <FormSelect isDisabled={isGettingCourts} fieldName="court">
             <option>Select a Court</option>
             {courts?.map?.(court => <option key={court.id} value={court.id}>{court.name}</option>)}
         </FormSelect>   
