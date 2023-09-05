@@ -1,4 +1,4 @@
-import { IUser } from "./entities";
+import { ICourt, IUser, IVenue } from "./entities";
 
 export type TGetUserService = () => Promise<IUser>;
 
@@ -17,3 +17,11 @@ export interface IRegisterPayload {
 }
 
 export type TRegisterService = (payload: IRegisterPayload) => Promise<string>;
+
+export type TGetVenuesService = () => Promise<IVenue[]>;
+
+export interface IGetCourtsPayload {
+    id: number;
+}
+
+export type TGetCourtService = (payload: IGetCourtsPayload) => Promise<ICourt[]>;

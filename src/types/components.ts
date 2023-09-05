@@ -1,4 +1,4 @@
-import { InputProps } from "@chakra-ui/react";
+import { InputProps, SelectProps } from "@chakra-ui/react";
 import { FormikConfig, FormikValues } from "formik";
 
 export interface IAuthProps {
@@ -16,5 +16,9 @@ export interface IFormContext {
 }
 
 export interface ITextInputProps extends InputProps {
+    fieldName: string;
+}
+
+export interface IFormSelectProps extends SelectProps {
     fieldName: string;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query"
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { BrowserRouter } from "react-router-dom"
 import { ChakraProvider } from "@chakra-ui/react"
 import { Toaster } from 'react-hot-toast'
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <App />
           <Toaster />
         </ChakraProvider>
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>,
