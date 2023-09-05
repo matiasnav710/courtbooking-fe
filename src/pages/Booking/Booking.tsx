@@ -1,4 +1,4 @@
-import StartTimePicker from "./components/StartTimePicker/StartTimePicker"
+import TimePicker from "./components/TimePicker/TimePicker"
 import FormButton from "shared/components/FormButton/FormButton"
 import VenueSelect from "./components/VenueSelect/VenueSelect"
 import CourtSelect from "./components/CourtSelect/CourtSelect"
@@ -22,7 +22,8 @@ const Booking = () => {
             >
                 <VenueSelect />
                 <CourtSelect />
-                <StartTimePicker />
+                <TimePicker fieldName="startTime" placeholderText="Pick Start Time" />
+                <TimePicker fieldName="endTime" placeholderText="Pick End Time" />
                 <FormButton>Book</FormButton>
             </Form>
         </Box>

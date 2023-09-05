@@ -22,3 +22,8 @@ export interface ITextInputProps extends InputProps {
 export interface IFormSelectProps extends SelectProps {
     fieldName: string;
 }
+
+export interface ITimePickerProps {
+    fieldName: string;
+    placeholderText: string;
+}

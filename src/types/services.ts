@@ -25,3 +25,11 @@ export interface IGetCourtsPayload {
 }
 
 export type TGetCourtService = (payload: IGetCourtsPayload) => Promise<ICourt[]>;
+
+export interface ICreateBookingPayload {
+    court: number;
+    startTime: Date;
+    endTime: Date;
+}
+
+export type TCreateBookingService = (payoad: ICreateBookingPayload) => Promise<string>;

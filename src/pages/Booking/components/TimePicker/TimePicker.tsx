@@ -1,12 +1,10 @@
 import { useFormikContext } from "formik";
 import DatePicker from "react-datepicker";
 import { useVenues } from "shared/hooks/venue";
-import { IFormContext } from "types/components";
+import { IFormContext, ITimePickerProps } from "types/components";
 
-import "./start-time-picker.scss"
-
-const StartTimePicker = () => {
-    const { values } = useFormikContext<IFormContext>()
+const TimePicker: React.FC<ITimePickerProps> = ({ fieldName, placeholderText }) => {
+    const { values, setFieldValue } = useFormikContext<IFormContext>()
     const { venues } = useVenues()
 
     if(!venues?.find(venue => venue.id === +values.venue)?.id || !values?.court) return <></>
@@ -14,12 +12,12 @@ const StartTimePicker = () => {
         <DatePicker 
             showTimeSelect 
             timeIntervals={60}    
-            onChange={() => {}}
+            onChange={(date) => setFieldValue(fieldName, date)}
             minTime={new Date(venues?.find(venue => venue.id === +values.venue)?.startTime || '')}
             maxTime={new Date(venues?.find(venue => venue.id === +values.venue)?.endTime || '')}
-            placeholderText="Select Start Time"
+            placeholderText={placeholderText}
         />
     )
 }
 
-export default StartTimePicker
+export default TimePicker
