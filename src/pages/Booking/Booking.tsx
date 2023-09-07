@@ -12,7 +12,7 @@ const Booking = () => {
             <Box className="booking-wrapper">
                 <div className="booking-container">
                     <Form
-                        initialValues={{ venue: null, court: null, startTime: null, endTime: null, sport: null }}
+                        initialValues={{ venue: null, court: null, startTime: null, endTime: null, sport: null,bookingComplete:false }}
                         validationSchema={bookingSchema}
                         wrapperClasses="form-wrapper"
                         onSubmit={() => { }}

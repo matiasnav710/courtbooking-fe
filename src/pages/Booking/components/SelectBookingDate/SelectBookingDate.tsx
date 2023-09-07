@@ -1,5 +1,5 @@
 import { useFormikContext } from "formik";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useGetAllCourts } from "shared/hooks/court";
 import { IFormContext } from "types/components";
 import { ICourt } from "types/entities";
@@ -9,23 +9,18 @@ import DatePicker from "react-datepicker";
 import "./SelectBookingDate.scss"
 import { formatDateTime } from "utils/helpers";
 import { Button } from "@chakra-ui/react";
-import { useCreateBooking } from "shared/hooks/booking";
-import { ICreateBookingPayload } from "types/services";
 
-function SelectBookingDate() {
+const SelectBookingDate:FC<{onSubmit:()=>void}> = ({onSubmit}) =>{
   const { courts: courtsData } = useGetAllCourts()
   const [currentMonth,setCurrentMonth]=useState(new Date())
   const { values,setFieldValue } = useFormikContext<IFormContext>()
   const [selectedCourt, setSelectedCourt] = useState<ICourt | null>(null)
   const { courtBookings } = useCourtAvaliability(+values?.court)
-  const {createBooking} = useCreateBooking()
   useEffect(() => {
     const court = courtsData?.find(court => court.id === Number(values.court))
     setSelectedCourt(court || null)
   }, [courtsData])
-  const onSubmit=()=>{
-    createBooking(values as unknown as ICreateBookingPayload)
-  }
+
   return (
     <div>
       <div className="date-picker-booking">

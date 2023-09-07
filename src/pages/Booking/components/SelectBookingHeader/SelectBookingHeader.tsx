@@ -28,6 +28,7 @@ function SelectBookingHeader() {
                 values.court && <div className='select-date-header'>
                     <p onClick={() => {
                         setFieldValue("court", null)
+                        setFieldValue("bookingComplete",false)
                     }} className='back-btn'>&larr;</p>
                     <p className='court-name'>{selectedCourt?.name}</p>
                 </div>
