@@ -22,7 +22,7 @@ const Register = () => {
             <Form
                 initialValues={{ firstName: "", lastName: "", email: "", password: "", confirmPassword: "" }}
                 validationSchema={registerSchema}
-                onSubmit={handleSubmit}
+                onSubmit={(values) => handleSubmit(values as IRegisterPayload)}
                 wrapperClasses="form-wrapper"
             >
                 <Box className="heading">Create an account</Box>

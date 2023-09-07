@@ -22,7 +22,7 @@ const Login = () => {
             <Form
                 initialValues={{ email: "", password: "" }}
                 validationSchema={loginSchema}
-                onSubmit={handleSubmit}
+                onSubmit={(values) => handleSubmit(values as ILoginPayload)}
                 wrapperClasses="form-wrapper"
             >
                 <Box className="heading">Login</Box>
