@@ -4,8 +4,9 @@ import React from "react"
 
 const FormButton: React.FC<ButtonProps> = ({ ...buttonProps }) => {
     const { handleSubmit } = useFormikContext()
+    
     return (
-        <Button {...buttonProps} onClick={() => handleSubmit()}>{buttonProps.children}</Button>
+        <Button  {...buttonProps}>{buttonProps.children}</Button>
     )
 }
 

@@ -1,5 +1,6 @@
 import Booking from "pages/Booking/Booking"
 import Login from "pages/Login/Login"
+import MyBooking from "pages/MyBooking/MyBooking"
 import Register from "pages/Register/Register"
 import { Navigate, Route, Routes } from "react-router-dom"
 import Auth from "shared/components/Auth"
@@ -10,6 +11,7 @@ const App = () => {
       <Route path="login" element={<Auth auth={false} Element={<Login />} />} />
       <Route path="register" element={<Auth auth={false} Element={<Register />} />} />
       <Route path="booking" element={<Auth Element={<Booking />} />} />
+      <Route path="my-bookings" element={<Auth Element={<MyBooking />} />} />
       <Route path="*" element={<Navigate to="/booking" />} />
     </Routes>
   )

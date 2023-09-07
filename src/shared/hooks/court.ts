@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
-import { getCourtAvaliability, getCourts } from "services/court"
+import { getAllCourts, getCourtAvaliability, getCourts } from "services/court"
+import { ICourt } from "types/entities"
 
 export const useCourts = (venueId?: number) => {
     const { data, isFetching }  = useQuery(
@@ -7,6 +8,11 @@ export const useCourts = (venueId?: number) => {
         ({ queryKey }) => getCourts({ id: queryKey[1] as number }),
         { enabled: !!venueId }
     )
+    return { courts: data, isGettingCourts: isFetching }
+}
+
+export const useGetAllCourts:()=>{courts:ICourt[] | undefined,isGettingCourts:boolean} = () => {
+    const { data, isFetching }  = useQuery(["getAllCourts"],getAllCourts)
     return { courts: data, isGettingCourts: isFetching }
 }
 

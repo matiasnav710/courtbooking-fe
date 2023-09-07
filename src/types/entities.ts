@@ -19,6 +19,13 @@ export interface ICourt {
     name: string;
     venue: IVenue;
     sport: ISport;
+    image:string;
+    description:string;
+}
+
+export interface ISport {
+    id: number;
+    title: string;
 }
 
 export interface ISport {

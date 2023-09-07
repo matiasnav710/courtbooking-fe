@@ -8,7 +8,6 @@ export interface IAuthProps {
 
 export interface IFormProps extends FormikConfig<FormikValues> {
     wrapperClasses?: string;
-    onSubmit: (args: any) => Promise<unknown>;
 }
 
 export interface IFormContext {

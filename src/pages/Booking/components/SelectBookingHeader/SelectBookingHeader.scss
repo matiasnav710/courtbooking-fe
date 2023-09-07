@@ -1,0 +1,19 @@
+@use "src/base" as *;
+
+.filter-container{
+    display: flex;
+    gap: 10px;
+}
+
+.select-date-header{
+    display: flex;
+    .court-name{
+        text-align: center;
+        flex: 1;
+    }
+    .back-btn {
+        cursor: pointer;
+        color: rgb(2, 2, 133);
+        font-weight: bold;
+    }
+}

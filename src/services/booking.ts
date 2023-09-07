@@ -7,4 +7,10 @@ const createBooking: TCreateBookingService = async(payload) => {
     return data
 }
 
+export const getUserBookings = async() => {
+    const { data } = await axios.get(`/api/bookings/`,{ headers: { Authorization: getToken() } })
+    return data
+}
+
+
 export default createBooking

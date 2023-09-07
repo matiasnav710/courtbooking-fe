@@ -5,10 +5,6 @@ const bookingSchema = yup.object({
         .number()
         .required()
         .label('Court'),
-    venue: yup
-        .number()
-        .required()
-        .label('Venue'),
     startTime: yup
         .date()
         .required()

@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react"
 import { Formik } from "formik"
 import { IFormProps } from "types/components"
 
-const Form: React.FC<IFormProps> = ({ initialValues, validationSchema, onSubmit, children, wrapperClasses }) => {
+const Form: React.FC<IFormProps> = ({ initialValues, validationSchema, children, wrapperClasses,onSubmit }) => {
     return (
         <Formik
             initialValues={initialValues}

@@ -24,10 +24,13 @@ const TimePicker: React.FC<ITimePickerProps> = ({ fieldName, placeholderText }) 
             showTimeSelect 
             timeIntervals={60}    
             onChange={handleChange}
+            
             minTime={new Date(venues?.find(venue => venue.id === +values.venue)?.startTime || '')}
             maxTime={new Date(venues?.find(venue => venue.id === +values.venue)?.endTime || '')}
             excludeTimes={generateDisabledTimes(courtBookings || [], fieldName)}
             placeholderText={placeholderText}
+            dropdownMode="select"
+            inline
         />
     )
 }
